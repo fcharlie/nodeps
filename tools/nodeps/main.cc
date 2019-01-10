@@ -21,7 +21,8 @@ public:
     std::error_code ec;
     exefile = std::filesystem::canonical(file, ec);
     if (ec || !std::filesystem::exists(exefile, ec)) {
-      fprintf(stderr, "File: %s\n", ec.message().c_str());
+      fwprintf(stderr, L"File: '%.*s' not found\n", (int)file.size(),
+               file.data());
       return false;
     }
     dir = exefile.parent_path();
