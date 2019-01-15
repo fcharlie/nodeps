@@ -166,7 +166,7 @@ bool NoDependsEngine::CopyToDist(std::wstring_view dist) {
 }
 
 int wmain(int argc, wchar_t **argv) {
-  _wsetlocale(LC_ALL, nullptr);
+  _wsetlocale(LC_ALL, L"");
   if (argc < 2) {
     wprintf(L"usage: %s exefile dist\n", argv[0]);
     return 1;
